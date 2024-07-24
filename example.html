@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Họ và tên</th>
+                <th>Điểm</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    <btn id="push_btn">Push</btn>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        var push_btn = document.getElementById('push_btn');
+        var list=[];
+        push_btn.onclick = function(){
+            var name;
+            var value;
+            name = window.prompt("Nhập họ và tên: ");
+            value = window.prompt("Nhập điểm: ");
+            if(name!=null&&value!=null&&parseInt(value)>=0&&parseInt(value)<=10)
+            {
+                var bodyTable = document.querySelector('tbody');
+                bodyTable.innerHTML += "<tr><td>"+name+"</td>"+"<td>"+value+"</td></tr>";
+            }else{
+                window.alert('Thông tin không hợp lệ!');
+            }
+        }
+    </script>
+</body>
+</html>
